@@ -1,0 +1,13 @@
+name: Summary
+version: 1.0.0
+description: "Summary plugin will search tag: <!--more--> in the page content and will create summary text."
+author:
+  name: Sergey Romanenko
+  email: awilum@yandex.com
+  url: http://rawilum.org
+homepage: https://github.com/rawilum-plugins/summary
+bugs: https://github.com/rawilum-plugins/summary/issues
+license: MIT
+
+# Plugin settings
+enabled: true
