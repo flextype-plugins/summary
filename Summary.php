@@ -1,37 +1,26 @@
-<?php
-namespace Rawilum;
+<?php namespace Rawilum;
 
-class Summary
-{
-    /**
-     * @var Rawilum
-     */
-    protected $rawilum;
+/**
+ *
+ * Summary Plugin for Rawilum
+ *
+ * @author Romanenko Sergey / Awilum <awilum@yandex.ru>
+ * @link http://rawilum.org
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-    /**
-     * Constructor
-     *
-     * @param Rawilum $rawilum
-     */
-    public function __construct(Rawilum $c)
-    {
-        $this->rawilum = $c;
-        $this->rawilum['events']->addListener('onPageContentAfter', array($this, 'parse'));
+
+//
+// Add listner for onPageContentAfter event
+//
+Events::addListener('onPageContentAfter', function () {
+    if (($pos = strpos(Pages::$page['content'], "<!--more-->")) === false) {
+
+    } else {
+        $page_content = explode("<!--more-->", Pages::$page['content']);
+        Pages::$page['summary'] = Filters::dispatch('content', Pages::parseContent($page_content[0]));
+        Pages::$page['content'] = Filters::dispatch('content', Pages::parseContent($page_content[0].$page_content[1]));
     }
-
-    /**
-     * Parse content to find <!--more--> for summary
-     */
-    public function parse()
-    {
-        if (($pos = strpos($this->rawilum['pages']->page['content'], "<!--more-->")) === false) {
-
-        } else {
-            $page_content = explode("<!--more-->", $this->rawilum['pages']->page['content']);
-            $this->rawilum['pages']->page['summary'] = $this->rawilum['filters']->dispatch('content', $this->rawilum['pages']->parseContent($page_content[0]));
-            $this->rawilum['pages']->page['content'] = $this->rawilum['filters']->dispatch('content', $this->rawilum['pages']->parseContent($page_content[0].$page_content[1]));
-        }
-    }
-}
-
-new Summary($rawilum);
+});
