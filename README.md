@@ -1,7 +1,7 @@
-# Summary Plugin for [Rawilum](http://rawilum.org/)
-![version](https://img.shields.io/badge/version-1.0.1-brightgreen.svg?style=flat-square "Version")
-![Rawilum](https://img.shields.io/badge/Rawilum-0.x-green.svg?style=flat-square "Rawilum Version")
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/rawilum-plugins/summary/blob/master/LICENSE.txt)
+# Summary Plugin for [Flextype](http://flextype.org/)
+![version](https://img.shields.io/badge/version-1.0.2-brightgreen.svg?style=flat-square "Version")
+![Flextype](https://img.shields.io/badge/Rawilum-0.x-green.svg?style=flat-square "Flextype Version")
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/flextype-plugins/summary/blob/master/LICENSE.txt)
 
 Summary plugin will search tag: <!--more--> in the page content and will create summary text.
 
@@ -32,4 +32,4 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 ```
 
 ## License
-[MIT](https://github.com/rawilum-plugins/summary/blob/master/LICENSE.txt)
+[MIT](https://github.com/flextype-plugins/summary/blob/master/LICENSE.txt)
