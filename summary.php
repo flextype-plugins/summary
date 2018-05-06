@@ -11,16 +11,17 @@
  * file that was distributed with this source code.
  */
 
+use Flextype\Component\Event\Event;
 
 //
 // Add listner for onPageContentAfter event
 //
-Events::addListener('onPageContentAfter', function () {
+Event::addListener('onPageContentAfter', function () {
     if (($pos = strpos(Pages::$page['content'], "<!--more-->")) === false) {
 
     } else {
         $page_content = explode("<!--more-->", Pages::$page['content']);
-        Pages::$page['summary'] = Filters::dispatch('content', Pages::parseContent($page_content[0]));
-        Pages::$page['content'] = Filters::dispatch('content', Pages::parseContent($page_content[0].$page_content[1]));
+        Pages::$page['summary'] = Event::dispatch('content', ['content' => Pages::parseContent($page_content[0])], true);
+        Pages::$page['content'] = Event::dispatch('content', ['content' => Pages::parseContent($page_content[0].$page_content[1])], true);
     }
 });
