@@ -18,7 +18,7 @@ use Flextype\Component\Event\Event;
 //
 // Add listner for onPageContentAfter event
 //
-Event::addListener('onPageContentAfter', function () {
+Event::addListener('onCurrentPageBeforeDisplayed', function () {
     $page = Content::getCurrentPage();
 
     if (($pos = strpos($page['content'], "<!--more-->")) === false) {

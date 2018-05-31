@@ -1,5 +1,5 @@
 name: Summary
-version: 1.2.0
+version: 1.3.0
 description: "Summary plugin will search tag: <!--more--> in the page content and will create summary text."
 author:
   name: Sergey Romanenko
